@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "37427b21-5f47-492a-8956-d572d0e7bef8",
+		"name": "CLMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39448717"
+	},
+	"item": [
+		{
+			"name": "admin_user",
+			"item": [
+				{
+					"name": "Admin User Creation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3OTcyNjk2LCJpYXQiOjE3Mzc4ODYyOTYsImp0aSI6ImZjMGU4M2FmY2Q2OTRkYTE5YzEwOTZjZWM5OGI1YzRmIiwidXNlcl9pZCI6Mn0.1biqXBHfJAMq9m2cjD3vjWbKyun92PBdvz593f9LUD8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// // parent reg\r\n// {\r\n//     \"username\": \"lms_parent_user4\",\r\n//     \"email\": \"lmsparentuser4@gmail.com\",\r\n//     \"password\": \"123\",\r\n//     \"password2\": \"123\",\r\n//     \"role\":\"parent\",\r\n//     \"phone_number\": \"1234567890\",\r\n//     \"is_approved\": true,\r\n//     \"relationship\": \"Mother\"\r\n// }\r\n\r\n// // student reg\r\n// {\r\n//     \"username\": \"lms_student_user3\",\r\n//     \"email\": \"lmsstudentuser3@gmail.com\",\r\n//     \"password\": \"123\",\r\n//     \"password2\": \"123\",\r\n//     \"role\":\"student\",\r\n//     \"phone_number\": \"1234567890\",\r\n//     \"is_approved\": true\r\n// }\r\n\r\n//  // teacher\r\n{\r\n    \"username\": \"lms_teacher_user3\",\r\n    \"email\": \"lmsteacheruser3@gmail.com\",\r\n    \"password\": \"123\",\r\n    \"password2\": \"123\",\r\n    \"role\":\"teacher\",\r\n    \"phone_number\": \"1234567890\",\r\n    \"is_approved\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/create/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4MTI1OTI1LCJpYXQiOjE3MzgwMzk1MjUsImp0aSI6ImU5N2VmMzgyMjFmNDQwZjM5Zjc3YTQwZGVmNWQ3MTZlIiwidXNlcl9pZCI6MTN9.0jzcPTxI898RhozYV-XUEbR7qOpdbNyAWyATeWc_EmM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"id\": 9,\r\n//     \"username\": \"lms_parent_user2\",\r\n//     \"email\": \"lmsparentuser2@gmail.com\",\r\n//     \"role\": \"parent\",\r\n//     \"is_approved\": true,\r\n//     \"phone_number\": \"1234567890\",\r\n//     \"relationship\": \"Parent\",\r\n//     \"student_ids\": [7]\r\n// }\r\n\r\n// // parent user edit\r\n// {\r\n//     \"id\": 11,\r\n//     \"username\": \"lms_parent_user4\",\r\n//     \"email\": \"lmsparentuser4@gmail.com\",\r\n//     \"password\": \"123\",\r\n//     \"password2\": \"123\",\r\n//     \"role\":\"parent\",\r\n//     \"phone_number\": \"1234567890\",\r\n//     \"is_approved\": true,\r\n//     \"relationship\": \"Father\",\r\n//     \"student_ids\": [12,13]\r\n// }\r\n\r\n// // teacher user edit\r\n// {\r\n//     \"id\": 15,\r\n//     \"username\": \"lms_teacher_user3\",\r\n//     \"email\": \"lmsteacheruser3@gmail.com\",\r\n//     \"password\": \"123\",\r\n//     \"password2\": \"123\",\r\n//     \"role\":\"teacher\",\r\n//     \"phone_number\": \"1234567890\",\r\n//     \"is_approved\": true\r\n// }\r\n\r\n// // by id\r\n{\r\n    \"id\": 11\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin User List - Approval Pending Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3OTcyNjk2LCJpYXQiOjE3Mzc4ODYyOTYsImp0aSI6ImZjMGU4M2FmY2Q2OTRkYTE5YzEwOTZjZWM5OGI1YzRmIiwidXNlcl9pZCI6Mn0.1biqXBHfJAMq9m2cjD3vjWbKyun92PBdvz593f9LUD8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// // parent reg\r\n{\r\n    \"username\": \"lms_parent_user1\",\r\n    \"email\": \"lmsparentuser1@gmail.com\",\r\n    \"password\": \"123\",\r\n    \"password2\": \"123\",\r\n    \"role\":\"parent\",\r\n    \"phone_number\": \"1234567890\",\r\n    \"is_approved\": true,\r\n    \"student_ids\": [7]\r\n}\r\n\r\n// // student reg\r\n// {\r\n//     \"username\": \"lms_student_user1\",\r\n//     \"email\": \"lmsstudentuser1@gmail.com\",\r\n//     \"password\": \"123\",\r\n//     \"password2\": \"123\",\r\n//     \"role\":\"student\",\r\n//     \"phone_number\": \"1234567890\",\r\n//     \"is_approved\": true\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/create/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comm REG",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"lms_admin_user2\",\r\n    \"email\": \"lmsadminuser2@gmail.com\",\r\n    \"password\": \"123\",\r\n    \"password2\": \"123\",\r\n    \"role\":\"admin\",\r\n    \"phone_number\": \"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGOUT",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bear <eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3ODkwNTUxLCJpYXQiOjE3Mzc4MDQxNTEsImp0aSI6IjU1NGRiODg0ZWVhODRhNTViYmJmMzNiMGFmZDYwN2UwIiwidXNlcl9pZCI6MX0.PB5txZJlowwqMN8f0ZmiCWXYjThyEF3BmChuco0rbDw>",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczODY0MzM3MCwiaWF0IjoxNzM4MDM4NTcwLCJqdGkiOiIyNTFmNTQ4Y2Y0MDM0M2QxOWRlZmM2ZmU0MTY1Mjk2MyIsInVzZXJfaWQiOjN9.2Vr_CZY2te7n1m5QEA49Z6UVrQmSVfA-lpeFYCdveiU\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/logout/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"logout",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comm LOGIN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"lms_student_user3\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
